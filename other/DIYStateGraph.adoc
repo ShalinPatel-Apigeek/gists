@@ -11,7 +11,6 @@ More details at : https://apigeesc.atlassian.net/wiki/display/EH/DevOpsSystem-DI
 
 === DIY State Graph
 
-image::http://raw.github.com/neo4j-contrib/gists/master/other/images/datacenter-management-1.PNG[Network Dependency Graph]
 
 === Database Setup
 
