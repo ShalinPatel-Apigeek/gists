@@ -25,21 +25,18 @@ CREATE (Walgreens:Customer {
 			name:'Walgreens',
 			AccountType: 'CLOUD',
 			Provider: 'AWS',
-			isActive : 'ACTIVE',
-		}) 
+			isActive : 'ACTIVE' }) 
 	
 	
 		
 //Create organization
 CREATE (Developer-org:Organization { 
 			id:'org1', 
-			name:'Developer',
-		})
+			name:'Developer' })
 
 CREATE (Internal-org:Organization { 
 			id:'org12', 
-			name:'Internal',
-		})
+			name:'Internal' })
 
 
 		
