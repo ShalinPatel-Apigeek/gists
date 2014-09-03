@@ -42,13 +42,13 @@ CREATE (Internal_org:Organization {
 		
 //Create Environment
 CREATE(Env_test:Environment{
-			id:"walTest"
+			id:"walTest",
 			name: "Test" 
 })
 
 
 CREATE(Env_prod:Environment{
-			id:"walProd"
+			id:"walProd",
 			name: "Productions" 
 })
 
