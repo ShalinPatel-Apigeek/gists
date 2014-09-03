@@ -49,28 +49,32 @@ CREATE(Env_test:Environment{
 
 CREATE(Env_prod:Environment{
 			id:"walProd",
-			name: "Productions" 
+			name: "Production" 
 })
 
 		
 //create Order
 CREATE (Order_Edge250:FinanceOrder { 
 			id:'Order123', 
+			name:'Order_Edge250',
 			SLA:'25M/quater' 
 		}) 
 
 CREATE (Order_APIBAAS250:FinanceOrder { 
 			id:'Order456', 
+			name:'Order_APIBAAS250',
 			SLA:'25M/quater' 
 		})
 		
 CREATE (Order_DeveloperService250:FinanceOrder { 
 			id:'Order789', 
+			name:'Order_DeveloperService250',
 			SLA:'1000 users' 
 		})
 		
 CREATE (Order_AnalyticsService250:FinanceOrder { 
 			id:'Order1011', 
+			name:'Order_AnalyticsService250',
 			SLA:'1TBStorage/quater' 
 		})	
 //create product
@@ -88,21 +92,25 @@ CREATE (Insight:Product {
 
 CREATE (Edge250:ProductInstance { 
 			id:'Edge250', 
+			name:'Edge250',
 			SLA:'25M calls /quater' 
 		})
 		
 CREATE (Edge500:ProductInstance { 
 			id:'Edge500', 
+			name:'Edge500',
 			SLA:'50M calls /quater' 
 		})
 
 CREATE (Edge1250:ProductInstance { 
-			id:'Edge500', 
+			id:'Edge1250',
+			name:'Edge1250'
 			SLA:'1250M calls /quater' 
 		})
 		
 CREATE (Insights250:ProductInstance { 
 			id:'Insight3', 
+			name:'Insights250',
 			SLA:'1TB /quater' 
 		})
 		
