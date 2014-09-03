@@ -268,7 +268,7 @@ CREATE (Order_DeveloperService250)-[:PLACED_FOR]->(Walgreens)
 CREATE (Order_AnalyticsService250)-[:PLACED_FOR]->(Walgreens)
 
 // connect customer with product
-CREATE (Walgreens)-[:USES]->(Edge250)
+
 
 //Connect product instance with product TODO:add sla in connection property
 
