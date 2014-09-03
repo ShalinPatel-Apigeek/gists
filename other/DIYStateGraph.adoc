@@ -104,7 +104,7 @@ CREATE (Edge500:ProductInstance {
 
 CREATE (Edge1250:ProductInstance { 
 			id:'Edge1250',
-			name:'Edge1250'
+			name:'Edge1250',
 			SLA:'1250M calls /quater' 
 		})
 		
