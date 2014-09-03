@@ -201,7 +201,7 @@ CREATE (RackSpace:Provider {
 
 
 //create Compute/storage/network Instance Type
-CREATE (c3.xlarge:ComputeInstance {
+CREATE (c3xlarge:ComputeInstance {
 			id:'aws-instance1',
 			UUID:'ABCD',
 			Type:'compute',
@@ -211,7 +211,7 @@ CREATE (c3.xlarge:ComputeInstance {
 			SSD:'2X40'
 			
 		})
-CREATE (i2.xlarge:ComputeInstance {
+CREATE (i2xlarge:ComputeInstance {
 			id:'aws-instance2',
 			UUID:'ABCDE',
 			Type:'Storage',
@@ -222,7 +222,7 @@ CREATE (i2.xlarge:ComputeInstance {
 			
 		})
 		
-CREATE (r1.large:ComputeInstance {
+CREATE (r1large:ComputeInstance {
 			id:'rackspace-instance3',
 			UUID:'ABCDF',
 			Type:'compute',
