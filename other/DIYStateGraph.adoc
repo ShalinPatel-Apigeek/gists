@@ -246,6 +246,11 @@ CREATE (Developer_org)-[:BELONG_TO]->(Walgreens)
 
 CREATE (Internal_org)-[:BELONG_TO]->(Walgreens)
 
+//Connect org to product instance
+CREATE (Developer_org)-[:uses]->(Edge500)
+CREATE (Developer_org)-[:uses]->(Insights250)
+CREATE (Internal_org)-[:uses]->(Edge250)
+
 //Connect Environment to org
 CREATE (Env_prod)-[:SUPPORTED_IN]->(Developer_org)
 
@@ -262,6 +267,8 @@ CREATE (Order_DeveloperService250)-[:PLACED_FOR]->(Walgreens)
 
 CREATE (Order_AnalyticsService250)-[:PLACED_FOR]->(Walgreens)
 
+// connect customer with product
+CREATE (Walgreens)-[:USES]->(Edge250)
 
 //Connect product instance with product TODO:add sla in connection property
 
