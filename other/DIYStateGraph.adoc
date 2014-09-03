@@ -1,4 +1,4 @@
-= DIYStateGraph
+= DIY State Graph
 
 APIgee EDGE system has many components. EDGE is a sophisticated and complex distributed system. EDGE has evolved over a few years, a few revisions and a few teams to serve its functionality. Current state of the tools and system do not maintain consistent view of the system state.
 More details at : https://apigeesc.atlassian.net/wiki/display/EH/DevOpsSystem-DIA
@@ -30,48 +30,48 @@ CREATE (Walgreens:Customer {
 	
 		
 //Create organization
-CREATE (Developer-org:Organization { 
+CREATE (Developer_org:Organization { 
 			id:'org1', 
 			name:'Developer' })
 
-CREATE (Internal-org:Organization { 
+CREATE (Internal_org:Organization { 
 			id:'org12', 
 			name:'Internal' })
 
 
 		
 //Create Environment
-CREATE(Env-test:Environment{
+CREATE(Env_test:Environment{
 			id:"walTest"
-			name: "Test"
+			name: "Test" 
 })
 
 
-CREATE(Env-prod:Environment{
+CREATE(Env_prod:Environment{
 			id:"walProd"
-			name: "Productions"
+			name: "Productions" 
 })
 
 		
 //create Order
-CREATE (Order-Edge250:Order { 
+CREATE (Order_Edge250:Order { 
 			id:'Order123', 
-			SLA:'25M/quater',
+			SLA:'25M/quater' 
 		}) 
 
-CREATE (Order-APIBAAS250:Order { 
+CREATE (Order_APIBAAS250:Order { 
 			id:'Order456', 
-			SLA:'25M/quater',
+			SLA:'25M/quater' 
 		})
 		
-CREATE (Order-DeveloperService250:Order { 
+CREATE (Order_DeveloperService250:Order { 
 			id:'Order789', 
-			SLA:'1000 users',
+			SLA:'1000 users' 
 		})
 		
-CREATE (Order-AnalyticsService250:Order { 
+CREATE (Order_AnalyticsService250:Order { 
 			id:'Order1011', 
-			SLA:'1TBStorage/quater',
+			SLA:'1TBStorage/quater' 
 		})	
 //create product
 CREATE (Edge:Product { 
@@ -88,100 +88,100 @@ CREATE (Insight:Product {
 
 CREATE (Edge250:ProductInstance { 
 			id:'Edge250', 
-			SLA:'25M calls /quater',
+			SLA:'25M calls /quater' 
 		})
 		
 CREATE (Edge500:ProductInstance { 
 			id:'Edge500', 
-			SLA:'50M calls /quater',
+			SLA:'50M calls /quater' 
 		})
 
 CREATE (Edge1250:ProductInstance { 
 			id:'Edge500', 
-			SLA:'1250M calls /quater',
+			SLA:'1250M calls /quater' 
 		})
 		
 CREATE (Insights250:ProductInstance { 
 			id:'Insight3', 
-			SLA:'1TB /quater',
+			SLA:'1TB /quater' 
 		})
 		
 
 //create SKU		
-CREATE (E250-Edge250:SKU { 
+CREATE (E250_Edge250:SKU { 
 			id:'sku250',
-			name:'Edge 250',
+			name:'Edge 250' 
 		})
 		
-CREATE (E2520-EnterpriseFeaturePack:SKU { 
+CREATE (E2520_EnterpriseFeaturePack:SKU { 
 			id:'sku2520',
-			name:'Enterprise Feature pack',
+			name:'Enterprise Feature pack' 
 		})
 		
-CREATE (E25040-Monetization:SKU { 
+CREATE (E25040_Monetization:SKU { 
 			id:'sku25040',
-			name:'Monetization Pack',
+			name:'Monetization Pack' 
 		})
 
-CREATE (I100-InsightsCTM:SKU { 
+CREATE (I100_InsightsCTM:SKU { 
 			id:'skuI100',
-			name:'Insights CTM Cloud',
+			name:'Insights CTM Cloud' 
 		})
 		
 // create Proxy Bundle
 
-CREATE (APIPlatform:proxy-bundle { 
+CREATE (APIPlatform:proxy_bundle { 
 			id:'proxy1',
-			name:'APIPlatform',
+			name:'APIPlatform' 
 		})
 		
-CREATE (APIBAAS:proxy-bundle { 
+CREATE (APIBAAS:proxy_bundle { 
 			id:'proxy2',
-			name:'API BAAS',
+			name:'API BAAS' 
 		})
 		
-CREATE (AnalyticsService:proxy-bundle { 
+CREATE (AnalyticsService:proxy_bundle { 
 			id:'proxy3',
-			name:'Analytics Service',
+			name:'Analytics Service' 
 		})
 		
 		
 //Create Component
-CREATE (Message-Processor:Component { 
+CREATE (Message_Processor:Component { 
 			id:'comp1',
 			name:'Message Processor',
-			type:'Dedicated'
+			type:'Dedicated' 
 		})
 CREATE (Router:Component { 
 			id:'comp2',
 			name:'Router',
-			type:'Shared'
+			type:'Shared' 
 		})
 
 CREATE (Dynect:Component { 
 			id:'comp3',
 			name:'Dynect',
-			type:'Shared'
+			type:'Shared' 
 		})
 
 CREATE (ELB:Component { 
 			id:'comp4',
 			name:'ELB',
-			type:'Dedicated'
+			type:'Dedicated' 
 		})
 
 CREATE (Cassandra:Component { 
 			id:'comp5',
 			name:'Cassandra',
-			type:'Shared'
+			type:'Shared' 
 		})
 		
-CREATE (UserGrid-tomcat:Component { 
+CREATE (UserGrid_tomcat:Component { 
 			id:'comp6',
 			name:'tomcat',
-			type:'Dedicated',
+			type:'Dedicated' 
 		})		
-CREATE (UserGrid-Cassandra:Component { 
+CREATE (UserGrid_Cassandra:Component { 
 			id:'comp7',
 			name:'User grid Cassandra',
 			type:'Shared'
@@ -234,18 +234,18 @@ CREATE (r1.large:ComputeInstance {
 		})		
 
 //Connect customer to orgs
-CREATE ((Developer-org)-[:BELONG_TO]->(Walgreens)
-CREATE ((Internal-org)-[:BELONG_TO]->(Walgreens)
+CREATE ((Developer_org)-[:BELONG_TO]->(Walgreens)
+CREATE ((Internal_org)-[:BELONG_TO]->(Walgreens)
 
 //Connect Environment to org
-CREATE ((Env-prod)-[:SUPPORTED_IN]->(Developer-org)
-CREATE ((Env-test)-[:SUPPORTED_IN]->(Developer-org)
-CREATE ((Env-prod)-[:SUPPORTED_IN]->(Internal-org)
+CREATE ((Env_prod)-[:SUPPORTED_IN]->(Developer_org)
+CREATE ((Env_test)-[:SUPPORTED_IN]->(Developer_org)
+CREATE ((Env_prod)-[:SUPPORTED_IN]->(Internal_org)
 
 //Connect Order to customer
-CREATE ((Order-APIBAAS250)-[:PLACED_FOR]->(Walgreens)
-CREATE ((Order-DeveloperService250)-[:PLACED_FOR]->(Walgreens)
-CREATE ((Order-AnalyticsService250)-[:PLACED_FOR]->(Walgreens)
+CREATE ((Order_APIBAAS250)-[:PLACED_FOR]->(Walgreens)
+CREATE ((Order_DeveloperService250)-[:PLACED_FOR]->(Walgreens)
+CREATE ((Order_AnalyticsService250)-[:PLACED_FOR]->(Walgreens)
 
 
 //Connect product instance with product TODO:add sla in connection property
@@ -256,15 +256,15 @@ CREATE ((Edge1250)-[:INSTANCE_OF {SLA:'1250M/Quater'}]->(Edge)
 CREATE ((Insights250)-[:INSTANCE_OF {SLA:'1TB/Quater'}]->(Insight)
 
 //connect SKU to product instance
-CREATE ((Edge250)-[:OFFERS]->(E250-Edge250)
-CREATE ((Edge250)-[:OFFERS]->(E2520-EnterpriseFeaturePack)
-CREATE ((Edge250)-[:OFFERS]->(E25040-Monetization)
-CREATE ((Insights250)-[:OFFERS]->(I100-InsightsCTM)
+CREATE ((Edge250)-[:OFFERS]->(E250_Edge250)
+CREATE ((Edge250)-[:OFFERS]->(E2520_EnterpriseFeaturePack)
+CREATE ((Edge250)-[:OFFERS]->(E25040_Monetization)
+CREATE ((Insights250)-[:OFFERS]->(I100_InsightsCTM)
 
 //connect proxy bundle with SKU
 
-CREATE ((APIPlatform)-[:BUNDLES {Quantity:'2'}]->(Message-Processor)-[:SERVES]->(Edge250)
-CREATE ((APIPlatform)-[:BUNDLES {Quantity:'4'}]->(Message-Processor)-[:SERVES]->(Edge500)
+CREATE ((APIPlatform)-[:BUNDLES {Quantity:'2'}]->(Message_Processor)-[:SERVES]->(Edge250)
+CREATE ((APIPlatform)-[:BUNDLES {Quantity:'4'}]->(Message_Processor)-[:SERVES]->(Edge500)
 
 CREATE ((APIPlatform)-[:BUNDLES {Quantity:'2'}]->(Router)-[:SERVES]->(Edge250)
 CREATE ((APIPlatform)-[:BUNDLES {Quantity:'4'}]->(Router)-[:SERVES]->(Edge500)
@@ -278,11 +278,11 @@ CREATE ((APIPlatform)-[:BUNDLES {Quantity:'2'}]->(ELB)-[:SERVES]->(Edge500)
 CREATE ((APIPlatform)-[:BUNDLES {Quantity:'6'}]->(Cassandra)-[:SERVES]->(Edge250)
 CREATE ((APIPlatform)-[:BUNDLES {Quantity:'6'}]->(Cassandra)-[:SERVES]->(Edge500)
 
-CREATE ((APIBAAS)-[:BUNDLES {Quantity:'2'}]->(UserGrid-tomcat)-[:SERVES]->(Edge250)
-CREATE ((APIBAAS)-[:BUNDLES {Quantity:'4'}]->(UserGrid-tomcat)-[:SERVES]->(Edge500)
+CREATE ((APIBAAS)-[:BUNDLES {Quantity:'2'}]->(UserGrid_tomcat)-[:SERVES]->(Edge250)
+CREATE ((APIBAAS)-[:BUNDLES {Quantity:'4'}]->(UserGrid_tomcat)-[:SERVES]->(Edge500)
 
-CREATE ((APIBAAS)-[:BUNDLES {Quantity:'2'}]->(UserGrid-Cassandra)-[:SERVES]->(Edge250)
-CREATE ((APIBAAS)-[:BUNDLES {Quantity:'4'}]->(UserGrid-Cassandra)-[:SERVES]->(Edge500)
+CREATE ((APIBAAS)-[:BUNDLES {Quantity:'2'}]->(UserGrid_Cassandra)-[:SERVES]->(Edge250)
+CREATE ((APIBAAS)-[:BUNDLES {Quantity:'4'}]->(UserGrid_Cassandra)-[:SERVES]->(Edge500)
 
 
 RETURN *
