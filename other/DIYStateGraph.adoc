@@ -235,53 +235,71 @@ CREATE (r1large:ComputeInstance {
 
 //Connect customer to orgs
 CREATE ((Developer_org)-[:BELONG_TO]->(Walgreens)
+
 CREATE ((Internal_org)-[:BELONG_TO]->(Walgreens)
 
 //Connect Environment to org
 CREATE ((Env_prod)-[:SUPPORTED_IN]->(Developer_org)
+
 CREATE ((Env_test)-[:SUPPORTED_IN]->(Developer_org)
+
 CREATE ((Env_prod)-[:SUPPORTED_IN]->(Internal_org)
 
 //Connect Order to customer
 CREATE ((Order_APIBAAS250)-[:PLACED_FOR]->(Walgreens)
+
 CREATE ((Order_DeveloperService250)-[:PLACED_FOR]->(Walgreens)
+
 CREATE ((Order_AnalyticsService250)-[:PLACED_FOR]->(Walgreens)
 
 
 //Connect product instance with product TODO:add sla in connection property
 
 CREATE ((Edge250)-[:INSTANCE_OF {SLA:'250M/Quater'}]->(Edge)
+
 CREATE ((Edge500)-[:INSTANCE_OF {SLA:'500M/Quater'}]->(Edge)
+
 CREATE ((Edge1250)-[:INSTANCE_OF {SLA:'1250M/Quater'}]->(Edge)
+
 CREATE ((Insights250)-[:INSTANCE_OF {SLA:'1TB/Quater'}]->(Insight)
 
 //connect SKU to product instance
 CREATE ((Edge250)-[:OFFERS]->(E250_Edge250)
+
 CREATE ((Edge250)-[:OFFERS]->(E2520_EnterpriseFeaturePack)
+
 CREATE ((Edge250)-[:OFFERS]->(E25040_Monetization)
+
 CREATE ((Insights250)-[:OFFERS]->(I100_InsightsCTM)
 
 //connect proxy bundle with SKU
 
 CREATE ((APIPlatform)-[:BUNDLES {Quantity:'2'}]->(Message_Processor)-[:SERVES]->(Edge250)
+
 CREATE ((APIPlatform)-[:BUNDLES {Quantity:'4'}]->(Message_Processor)-[:SERVES]->(Edge500)
 
 CREATE ((APIPlatform)-[:BUNDLES {Quantity:'2'}]->(Router)-[:SERVES]->(Edge250)
+
 CREATE ((APIPlatform)-[:BUNDLES {Quantity:'4'}]->(Router)-[:SERVES]->(Edge500)
 
 CREATE ((APIPlatform)-[:BUNDLES {Quantity:'1'}]->(Dynect)-[:SERVES]->(Edge250)
+
 CREATE ((APIPlatform)-[:BUNDLES {Quantity:'1'}]->(Dynect)-[:SERVES]->(Edge500)
 
 CREATE ((APIPlatform)-[:BUNDLES {Quantity:'2'}]->(ELB)-[:SERVES]->(Edge250)
+
 CREATE ((APIPlatform)-[:BUNDLES {Quantity:'2'}]->(ELB)-[:SERVES]->(Edge500)
 
 CREATE ((APIPlatform)-[:BUNDLES {Quantity:'6'}]->(Cassandra)-[:SERVES]->(Edge250)
+
 CREATE ((APIPlatform)-[:BUNDLES {Quantity:'6'}]->(Cassandra)-[:SERVES]->(Edge500)
 
 CREATE ((APIBAAS)-[:BUNDLES {Quantity:'2'}]->(UserGrid_tomcat)-[:SERVES]->(Edge250)
+
 CREATE ((APIBAAS)-[:BUNDLES {Quantity:'4'}]->(UserGrid_tomcat)-[:SERVES]->(Edge500)
 
 CREATE ((APIBAAS)-[:BUNDLES {Quantity:'2'}]->(UserGrid_Cassandra)-[:SERVES]->(Edge250)
+
 CREATE ((APIBAAS)-[:BUNDLES {Quantity:'4'}]->(UserGrid_Cassandra)-[:SERVES]->(Edge500)
 
 
