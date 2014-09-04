@@ -276,7 +276,7 @@ CREATE (Edge250)-[:INSTANCE_OF {SLA:'250M/Quater' }]->(Edge)
 
 CREATE (Edge500)-[:INSTANCE_OF {SLA:'500M/Quater' }]->(Edge)
 
-CREATE (Edge1250)-[:INSTANCE_OF {SLA:'1250M/Quater' }]->(Edge)
+//CREATE (Edge1250)-[:INSTANCE_OF {SLA:'1250M/Quater' }]->(Edge)
 
 CREATE (Insights250)-[:INSTANCE_OF {SLA:'1TB/Quater' }]->(Insight)
 
